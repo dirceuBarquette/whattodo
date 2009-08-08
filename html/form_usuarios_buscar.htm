@@ -1,0 +1,32 @@
+<form id="form_usuarios_buscar" method="post" action="index.php" class="" onsubmit="return false">
+   <div id="bloco_usuarios">
+      <div class="table_head_div"><span class="min_max_img Link"><img src="imgs/minimize.png" alt="minimize table" class="min" /><img src="imgs/maximize.png" alt="maximize table" class="max disp_none" /></span></div>
+      <div class="list_container">
+         <div>
+            <table id="list_usuarios" class="searched_list" cellpadding="2" cellspacing="2">
+               <thead>
+                  <tr><th>usu&aacute;rios</th><th>tipo</th><th>&aacute;rea</th></tr>
+               </thead>
+               <tbody id="tbody_list_usuarios">
+               </tbody>
+            </table>
+         </div>
+         <div id="table_params">
+            <div class="float_left">
+               <span class="lbl">total:</span><span id="total" class="vl"></span>
+               <label for="per_page" class="lbl">por p&aacute;gina:</label>
+               <select id="per_page" name="per_page" class="table_param" >
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+               </select>
+               <span class="lbl">p&aacute;gina:</span><span id="page" class="vl">1</span>
+               <span class="start Link lbl" id="first_page" title="in&iacute;cio">|&lt;</span><span class="start Link vl" id="prev_page" title="anterior">&lt;</span><span class="start Link vl" id="next_page" title="pr&oacute;xima">&gt;</span><span class="start Link lbl" id="last_page" title="&uacute;ltima">&gt;|</span>
+            </div>
+            <div id="div_buscar" class="float_right">
+               <input type="button" id="bt_busca_usuario" name="bt_busca_usuario" value="procurar" />
+               <input type="text" name="busca_usuario" class="table_param" id="busca_usuario" />
+            </div>
+      </div>
+   </div>
+</form>

@@ -1,0 +1,15 @@
+body {
+color:#000;
+/*background-image: url(../imgs/background.jpg);*/
+font:12px Verdana, Arial bold;
+}
+label {
+   float:left;
+   width:125px;
+   margin-bottom:15px;
+}
+#login /*FORMULÁRIO INICIAL DE LOGIN*/
+{
+  width:200px;
+  margin:150px 0 0 300px;
+}

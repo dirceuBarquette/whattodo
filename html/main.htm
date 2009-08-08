@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Sistema Integrado PILATES</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" media="screen" href="./css/app.css" />
+<script type="text/javascript" src="./js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="./js/jquery.json-1.3.js"></script>
+<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript">
+   this.debug_mode = true;
+
+
+   function debug (target) {
+      if (debug_mode) {
+         if (window.console && window.console.log) {
+            return window.console.log(target);
+         } else {
+            alert('erro! '+ target);
+         }
+      }
+   };
+$(document).ready(function(){
+
+   var modules_conf = ['client_side_tools','form_panel','free_text_question','main_menu_items','option_menu_items','table_listing_controls','users'];
+   app.load_modules(modules_conf, function(){
+
+      app.make_mayonese(function(){
+         app.ajx({whattodo:'get_main_menu_items'});
+      });
+   });
+});
+
+</script>
+</head>
+<body>
+   <div id="wrapper">
+      <div class="template prompt">
+         <div class='prompt_title'>
+            <div class="prompt_title_text"></div>
+            <div class="prompt_close_icon">&nbsp;</div>
+         </div>
+         <div class="prompt_body">
+         </div>
+      </div>
+      <div class="template table_list">
+         <table class="table_list_self" cellpadding="2" cellspacing="2">
+            <thead class="table_list_thead"><tr class="table_list_tr_thead"></tr></thead>
+            <tbody class="table_list_tbody"></tbody>
+            <tfoot class="table_list_tfoot">
+               <tr>
+                  <td  class="table_list_td_tfoot">
+                     <div class="table_list_params">
+                        <div class="table_list_params_leftside">
+                           <span class="lbl">total:</span><span class="total"></span>
+                              <label for="per_page" class="lbl">por p&aacute;gina:</label>
+                              <select class="per_page table_param" name="per_page" >
+                                 <option value="5">5</option>
+                                 <option value="10" selected="selected">10</option>
+                                 <option value="15">15</option>
+                              </select>
+                           <span class="lbl">p&aacute;gina:</span><span class="page vl table_param">1</span>
+                           <span class="start Link lbl first_page  clickable" title="in&iacute;cio">|&lt;</span><span class="start Link lbl prev_page  clickable" title="anterior">&lt;</span><span class="start Link lbl next_page clickable" title="pr&oacute;xima">&gt;</span><span class="start Link lbl last_page" title="&uacute;ltima">&gt;|</span>
+                        </div>
+                        <div class="table_list_params_rightside">
+                           <input type="button" class="table_list_search_button clickable" value="procurar" />
+                           <input type="text" name="search_text" class="table_param" />
+                        </div>
+                     </div>
+                  </td>
+               </tr>
+            </tfoot>
+         </table>
+      </div>
+      <div class="template dialog_panel">
+         <div class='dlg_title'></div>
+         <div class="dlg_form"></div>
+         <div class="dlg_buttons">
+            <input type="button" value="fechar" class="dlg_button close" />
+         </div>
+      </div>
+      <div id="header"></div>
+<!--         <div id="top_div">&nbsp;</div> -->
+         <div id="mainmenu"></div>
+         <div id="optionmenu"></div>
+         <div id="desktop"></div>
+   </div>
+</body>
+</html>

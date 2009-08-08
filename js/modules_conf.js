@@ -1,0 +1,1 @@
+;var modules_conf = ['main_menu_items'];
